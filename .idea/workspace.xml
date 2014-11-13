@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c75cbc50-1bb4-4eab-9e40-937b9ea7493a" name="Default" comment="" />
+    <list default="true" id="c75cbc50-1bb4-4eab-9e40-937b9ea7493a" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Game/4-in-a-line/index.html" afterPath="$PROJECT_DIR$/Game/4-in-a-line/index.html" />
+    </list>
     <ignored path="Rambutan.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,8 +42,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Game/4-in-a-line/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.14424242" vertical-offset="0" max-vertical-offset="825">
-              <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.22666667" vertical-offset="0" max-vertical-offset="825">
+              <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -59,6 +61,7 @@
         <option value="$PROJECT_DIR$/scripts/gameVisuals.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/scripts/game.js" />
+        <option value="$PROJECT_DIR$/Game/4-in-a-line/index.html" />
       </list>
     </option>
   </component>
@@ -275,8 +278,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Game/4-in-a-line/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14424242" vertical-offset="0" max-vertical-offset="825">
-          <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.22666667" vertical-offset="0" max-vertical-offset="825">
+          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
           <folding />
         </state>
       </provider>
