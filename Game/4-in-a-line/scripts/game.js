@@ -116,31 +116,47 @@ function drop(){
     }else if (player.x >= 53 && player.x <= 108){ //2
         placeChip(2);
     }else if (player.x >= 109 && player.x <= 164){ //3
+        placeChip(3);
     }else if (player.x >= 165 && player.x <= 220) { //4
+        placeChip(4);
 
     }else if (player.x >= 221 && player.x <= 275) { //5
+        placeChip(5);
 
     }else if (player.x >= 270 && player.x <= 332) { //6
+        placeChip(6);
+
     }else if (player.x >= 333 && player.x <= 388) { //7
+        placeChip(7);
+
     }else if (player.x >= 389 && player.x <= 443) { //8
+        placeChip(8);
+
     }else if (player.x >= 444 && player.x <= 501) { //9
+        placeChip(9);
+
     }else if (player.x >= 502 && player.x <= 555) { //10
+        placeChip(10);
+
     }
 }
 function placeChip (col){
-    while(chipsPlaced[startRow][col-1] != 0 && startRow < 6){
-        startRow++;
-    }
-    if(startRow==5){
-        startRow=0;
-    }else{
-        if(turn==1){
-            chipsPlaced[startRow][col-1]=turn;
-            startRow = 0;
+    if (chipsPlaced[4][col-1]!=0){
+    }else {
+        while (chipsPlaced[startRow][col - 1] != 0 && startRow < 6) {
+            startRow++;
         }
-        else{
-            chipsPlaced[startRow][col-1]=turn;
+        if (startRow == 5) {
             startRow = 0;
+        } else {
+            if (turn == 1) {
+                chipsPlaced[startRow][col - 1] = turn;
+                startRow = 0;
+            }
+            else {
+                chipsPlaced[startRow][col - 1] = turn;
+                startRow = 0;
+            }
         }
     }
 
