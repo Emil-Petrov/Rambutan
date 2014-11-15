@@ -5,8 +5,8 @@ var canvas,
     gameStart,
     player,
     turn,
-    board,
     chipsPlaced,
+    startRow,
     mouseX,
     mouseY;
 
@@ -29,9 +29,9 @@ function drawHead(){
     this.height = 50;
     ctx.strokeRect(this.x, this.y, this.width, this.height);
 
-    placePool();
+    markPool();
 }
-function placePool(){
+function markPool(){
     if (player.x >= 0 && player.x <= 52) { //1
         markSpot(-1);
     }else if (player.x >= 53 && player.x <= 108){ //2
@@ -66,33 +66,8 @@ function placePool(){
             ctx.closePath();
         }
     }
-    addEventListener('mousedown',drop);
-
-    function drop(){
-        if (player.x >= 0 && player.x <= 52) { //1
-            board(1,chipsPlaced);
-        }else if (player.x >= 53 && player.x <= 108){ //2
-            board(2,chipsPlaced);
-        }else if (player.x >= 109 && player.x <= 164){ //3
-            board(3,chipsPlaced);
-        }else if (player.x >= 165 && player.x <= 220) { //4
-            board(4,chipsPlaced);
-        }else if (player.x >= 221 && player.x <= 275) { //5
-            board(5,chipsPlaced);
-        }else if (player.x >= 270 && player.x <= 332) { //6
-            board(6,chipsPlaced);
-        }else if (player.x >= 333 && player.x <= 388) { //7
-            board(7,chipsPlaced);
-        }else if (player.x >= 389 && player.x <= 443) { //8
-            board(8,chipsPlaced);
-        }else if (player.x >= 444 && player.x <= 501) { //9
-            board(9,chipsPlaced);
-        }else if (player.x >= 502 && player.x <= 555) { //10
-            board(10,chipsPlaced);
-
-        }
-    }
 }
+
 
 function mainBoard(){
     for (var row = 0; row < 5; row++) {
@@ -101,6 +76,7 @@ function mainBoard(){
         }
     }
 }
+
 
 function drawFoot(){
     ctx.strokeRect(0,335, cWidth,50);
@@ -126,6 +102,7 @@ function drawFoot(){
     }
 }
 
+
 function drawBoard(){
     ctx.strokeStyle = '#000112';
     drawHead();
@@ -133,6 +110,46 @@ function drawBoard(){
     drawFoot();
 }
 
+function drop(){
+    if (player.x >= 0 && player.x <= 52) { //1
+        placeChip(1);
+    }else if (player.x >= 53 && player.x <= 108){ //2
+        placeChip(2);
+    }else if (player.x >= 109 && player.x <= 164){ //3
+    }else if (player.x >= 165 && player.x <= 220) { //4
+
+    }else if (player.x >= 221 && player.x <= 275) { //5
+
+    }else if (player.x >= 270 && player.x <= 332) { //6
+    }else if (player.x >= 333 && player.x <= 388) { //7
+    }else if (player.x >= 389 && player.x <= 443) { //8
+    }else if (player.x >= 444 && player.x <= 501) { //9
+    }else if (player.x >= 502 && player.x <= 555) { //10
+    }
+}
+function placeChip (col){
+    while(chipsPlaced[startRow][col-1] != 0 && startRow < 6){
+        startRow++;
+    }
+    if(startRow==5){
+        startRow=0;
+    }else{
+        if(turn==1){
+            chipsPlaced[startRow][col-1]=turn;
+            startRow = 0;
+        }
+        else{
+            chipsPlaced[startRow][col-1]=turn;
+            startRow = 0;
+        }
+    }
+
+}
+
+
+function clear(){
+    ctx.clearRect(0,0,cWidth,cHeight);
+}
 function Player(){
     this.x = mouseX;
     this.y = mouseY;
@@ -155,53 +172,24 @@ function Player(){
         }
     }
 }
-function Board(col, chipsPlaced){
-    this.row = 1;
-    this.col = col-1;
-    //if the row/col combo is occupied look to place pool in higher row.
-    if (chipsPlaced[this.row[this.col]] !=0){
-        for (var i = this.row+1; i <= 6; i++) {
-            if (i == 6) {
-                ctx.font = '40px Arial bold'
-                ctx.textAlign = 'start';
-                ctx.fillText('This row is full! Pick another.', 0, 370, cWidth);
-            } else {
-                if (chipsPlaced[i[this.col]] == 0) {
-                    this.row = i;
-                }
-            }
-        }
-    }else{ //If not #enterTheMatrix
-        if (turn==1) {
-            chipsPlaced[this.row[this.col]] = 1;
-            this.row=1;
-        }else if(turn==2){
-            chipsPlaced[this.row[this.col]] = 2;
-            this.row=1;
-        }
-    }
-}
-
-
-function clear(){
-    ctx.clearRect(0,0,cWidth,cHeight);
-}
 function init(){
     canvas = document.getElementById('canvas');
     ctx = canvas.getContext('2d');
     cWidth = canvas.width;
     cHeight = canvas.height;
 
-    chipsPlaced =   {1:[0,0,0,0,0,0,0,0,0,0],
-                    2:[0,0,0,0,0,0,0,0,0,0],
-                    3:[0,0,0,0,0,0,0,0,0,0],
-                    4:[0,0,0,0,0,0,0,0,0,0],
-                    5:[0,0,0,0,0,0,0,0,0,0]};
+
+    startRow = 0;
+
+    chipsPlaced =   [[0,0,0,0,0,0,0,0,0,0],
+                    [0,0,0,0,0,0,0,0,0,0],
+                    [0,0,0,0,0,0,0,0,0,0],
+                    [0,0,0,0,0,0,0,0,0,0],
+                    [0,0,0,0,0,0,0,0,0,0]];
 
     gameStart = false;
 
     player = new Player();
-    board = new Board();
 
     document.addEventListener('mousemove',function(){ //get mouse position
 
@@ -210,7 +198,7 @@ function init(){
 
         player.x = mouseX;
         player.y = mouseY;
-    })
+    });
     document.addEventListener('mousedown',function(){
         gameStart = true;
         if(turn==1){
@@ -219,10 +207,9 @@ function init(){
         else{
             turn=1;
         }
-    })
-
+    });
+    document.addEventListener('mousedown',drop);
     draw();
-
 }
 
 window.addEventListener('load',init);
