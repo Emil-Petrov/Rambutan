@@ -1,0 +1,14 @@
+1. Draw Board - 2/3
+	1.1 Draw board head - done
+		1.1.1 Add indicator where chip will be placed - done.
+	1.2 Draw Body - done
+	1.3 Draw footer to hold current info - done
+		1.3.1 add score - in progress
+	1.4 Draw end game screen - in progress
+
+2. Game logic!
+	2.1 Make game hold info on chips placed - done
+		2.1.1 Prevent player from placing chips over the other player`s chips or over the row cap - done
+	2.2 Win condition - in progress
+	2.3 Add score - in progress
+	2.4 Add reset button - in progress
