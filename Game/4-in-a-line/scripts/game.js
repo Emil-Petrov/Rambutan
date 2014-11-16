@@ -228,4 +228,31 @@ function init(){
     draw();
 }
 
+function how2win(){
+    for (var row = 0; row < 5; row++){
+        for (var col = 3; col < 7; col++){
+            check();
+        }
+    }
+    function check (row,col){
+        var colWin = chipsPlaced[row][col] == chipsPlaced[row][col+1] &&
+                     chipsPlaced[row][col] == chipsPlaced[row][col+2] &&
+                     chipsPlaced[row][col] == chipsPlaced[row][col+3];
+        if (row>=3){
+            var rowWin = chipsPlaced[row][col] == chipsPlaced[row-1][col] &&
+                         chipsPlaced[row][col] == chipsPlaced[row-2][col] &&
+                         chipsPlaced[row][col] == chipsPlaced[row-3][col];
+            var drWin = chipsPlaced[row][col] == chipsPlaced[row+1][col+1] &&
+                        chipsPlaced[row][col] == chipsPlaced[row+2][col+2] &&
+                        chipsPlaced[row][col] == chipsPlaced[row+3][col+3];
+            var dlWin = chipsPlaced[row][col] == chipsPlaced[row-1][col-1] &&
+                        chipsPlaced[row][col] == chipsPlaced[row-2][col-2] &&
+                        chipsPlaced[row][col] == chipsPlaced[row-3][col-3];
+        }
+        if(colWin || rowWin || drWin || dlWin){
+            console.log('WIN');
+       }
+    }
+}
+
 window.addEventListener('load',init);
