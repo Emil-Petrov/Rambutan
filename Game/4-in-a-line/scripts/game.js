@@ -4,7 +4,9 @@ var canvas,
     cHeight,
     gameStart,
     gameEnd,
+    whoWon,
     player,
+    score,
     turn,
     chipsPlaced,
     chipsPositionY,
@@ -31,8 +33,6 @@ function drawBoard() {
     if (gameStart && !gameEnd) {
         drawPlayers();
     }else if (gameEnd && gameStart){ //TODO Make game end screen.
-        drawPlayers();
-
         drawEnd();
     }
     function drawPlayers() {
@@ -51,7 +51,28 @@ function drawBoard() {
     }
 
     function drawEnd(){ //End game screen goes here
+        ctx.fillStyle = '#000112';
+        ctx.fillRect(0, 0, cWidth, cHeight);
+        ctx.fillStyle = 'white';
+        ctx.font = "40px 'PT Sans',Tahoma,sans-serif";
 
+
+        ctx.fillText('Click to start new game.', 70, 50, cWidth);
+
+        if(whoWon!='tie'){
+            ctx.fillText('Player ' + whoWon + ' wins', 160, 125, cWidth);
+        }else{
+            ctx.fillText('TIE', 245, 125, cWidth);
+        }
+
+        ctx.fillText('Score', 230, 190, cWidth);
+        ctx.fillText('Player 1 : Player 2', 110, 250, cWidth);
+        ctx.fillText(score[0] +' : '+score[1], 230, 300, cWidth);
+
+        ctx.fillStyle=player.p1color;
+        ctx.fillRect(60,215, 40,40);
+        ctx.fillStyle=player.p2color;
+        ctx.fillRect(445,215, 40,40);
     }
 
     function drawHead() { //The top part of the board.
@@ -127,7 +148,7 @@ function drawBoard() {
             ctx.fillText('Click to start', 167, 375, cWidth);
         }
         else {
-            if (turn == 1) { //Somehow takes into account player color and uses it.
+            if (turn == 1) {
                 ctx.fillStyle = '#000000';
                 ctx.font = "40px 'PT Sans',Tahoma,sans-serif bold";
                 ctx.fillText('It`s Player 1`s turn', 110, 375, cWidth);
@@ -138,7 +159,7 @@ function drawBoard() {
                 ctx.strokeRect(59,339,42,42);
                 ctx.strokeRect(469,339,42,42);
             }
-            else if (turn == 2) { //Somehow takes into account player color and uses it.
+            else if (turn == 2) {
                 ctx.fillStyle = '#000000';
                 ctx.font = "40px 'PT Sans',Tahoma,sans-serif";
                 ctx.fillText('It`s Player 2`s turn', 110, 375, cWidth);
@@ -158,63 +179,65 @@ function drawBoard() {
 }
 function boardControl() {
     //If you click between x and x and you drop a chip at N col at the lowest free row.
-    if (player.x >= 0 && player.x <= 52) { //1
-        placeChip(1);
-        winCheck(chipsPlaced);
-    } else if (player.x >= 53 && player.x <= 108 && player.y < 385) { //2
-        placeChip(2);
-        winCheck(chipsPlaced);
-    } else if (player.x >= 109 && player.x <= 164 && player.y < 385) { //3
-        placeChip(3);
-        winCheck(chipsPlaced);
-    } else if (player.x >= 165 && player.x <= 220 && player.y < 385) { //4
-        placeChip(4);
-        winCheck(chipsPlaced);
-    } else if (player.x >= 221 && player.x <= 275 && player.y < 385) { //5
-        placeChip(5);
-        winCheck(chipsPlaced);
-    } else if (player.x >= 270 && player.x <= 332 && player.y < 385) { //6
-        placeChip(6);
-        winCheck(chipsPlaced);
-    } else if (player.x >= 333 && player.x <= 388 && player.y < 385) { //7
-        placeChip(7);
-        winCheck(chipsPlaced);
-    } else if (player.x >= 389 && player.x <= 443 && player.y < 385) { //8
-        placeChip(8);
-        winCheck(chipsPlaced);
-    } else if (player.x >= 444 && player.x <= 501 && player.y < 385) { //9
-        placeChip(9);
-        winCheck(chipsPlaced);
-    } else if (player.x >= 502 && player.x <= 555 && player.y < 385) { //10
-        placeChip(10);
-        winCheck(chipsPlaced);
-    }
+   if (gameStart){
+       if (player.x >= 0 && player.x <= 52) { //1
+           placeChip(1);
+           winCheck(chipsPlaced);
+       } else if (player.x >= 53 && player.x <= 108 && player.y < 385) { //2
+           placeChip(2);
+           winCheck(chipsPlaced);
+       } else if (player.x >= 109 && player.x <= 164 && player.y < 385) { //3
+           placeChip(3);
+           winCheck(chipsPlaced);
+       } else if (player.x >= 165 && player.x <= 220 && player.y < 385) { //4
+           placeChip(4);
+           winCheck(chipsPlaced);
+       } else if (player.x >= 221 && player.x <= 275 && player.y < 385) { //5
+           placeChip(5);
+           winCheck(chipsPlaced);
+       } else if (player.x >= 270 && player.x <= 332 && player.y < 385) { //6
+           placeChip(6);
+           winCheck(chipsPlaced);
+       } else if (player.x >= 333 && player.x <= 388 && player.y < 385) { //7
+           placeChip(7);
+           winCheck(chipsPlaced);
+       } else if (player.x >= 389 && player.x <= 443 && player.y < 385) { //8
+           placeChip(8);
+           winCheck(chipsPlaced);
+       } else if (player.x >= 444 && player.x <= 501 && player.y < 385) { //9
+           placeChip(9);
+           winCheck(chipsPlaced);
+       } else if (player.x >= 502 && player.x <= 555 && player.y < 385) { //10
+           placeChip(10);
+           winCheck(chipsPlaced);
+       }
 
-    //Adds chips to the matrix and prevents the player from placing chips if full
-    function placeChip(col) {
-        if (chipsPlaced[4][col - 1] != 0) { //prevents overflow in rows.
+       //Adds chips to the matrix and prevents the player from placing chips if full
+       function placeChip(col) {
+           if (chipsPlaced[4][col - 1] != 0) { //prevents overflow in rows.
 
-            //Can add text here. If u want.
+               //Can add text here. If u want.
 
-        } else {
-            while (chipsPlaced[startRow][col - 1] != 0 && startRow < 6) { //Looks for an empty column in current row.
-                startRow++;
-            }
-            if (startRow == 5) { //If all columns are full resets the counter for future use.
-                startRow = 0;
-            } else { //If column is empty it adds a chip to the corresponding place in the matrix defined in the init function.
-                if (turn == 1) { //If it's player 1's turn it places a 1 in matrix.
-                    chipsPlaced[startRow][col - 1] = turn;
-                    startRow = 0;
-                }
-                else if (turn==2) { //If it's player 2's turn it places a 2 in matrix.
-                    chipsPlaced[startRow][col - 1] = turn;
-                    startRow = 0;
-                }
-                nextTurn();
-            }
-        }
-    }
+           } else {
+               while (chipsPlaced[startRow][col - 1] != 0 && startRow < 6) { //Looks for an empty column in current row.
+                   startRow++;
+               }
+               if (startRow == 5) { //If all columns are full resets the counter for future use.
+                   startRow = 0;
+               } else { //If column is empty it adds a chip to the corresponding place in the matrix defined in the init function.
+                   if (turn == 1) { //If it's player 1's turn it places a 1 in matrix.
+                       chipsPlaced[startRow][col - 1] = turn;
+                       startRow = 0;
+                   }
+                   else if (turn==2) { //If it's player 2's turn it places a 2 in matrix.
+                       chipsPlaced[startRow][col - 1] = turn;
+                       startRow = 0;
+                   }
+                   nextTurn();
+               }
+           }
+       }
+   }
     function winCheck(matrice) { //Checks if a player wins the game (there is 4 chips of 1 color in a row)
         for (var i = 0; i < 5; i++) {
             for (var j = 0; j < 10; j++) {
@@ -229,9 +252,13 @@ function boardControl() {
                     matrice[row][col] === matrice[row][col + 3] &&
                     matrice[row][col] !== 0) {
                     if (matrice[row][col] === 1) {
+                        whoWon = 1;
+                        score[0]++;
                         EndGame();
                     }
                     else if (matrice[row][col] === 2) {
+                        whoWon = 2;
+                        score[1]++;
                         EndGame();
                     }
                 }
@@ -243,9 +270,13 @@ function boardControl() {
                     matrice[row][col] === matrice[row + 3][col] &&
                     matrice[row][col] !== 0) {
                     if (matrice[row][col] === 1) {
+                        whoWon = 1;
+                        score[0]++;
                         EndGame();
                     }
                     else if (matrice[row][col] === 2) {
+                        whoWon = 2;
+                        score[1]++;
                         EndGame();
                     }
                 }
@@ -257,9 +288,13 @@ function boardControl() {
                     matrice[row][col] === matrice[row + 3][col + 3] &&
                     matrice[row][col] !== 0) {
                     if (matrice[row][j] === 1) {
+                        whoWon = 1;
+                        score[0]++;
                         EndGame();
                     }
                     else if (matrice[row][j] === 2) {
+                        whoWon = 2
+                        score[1]++;
                         EndGame();
                     }
                 }
@@ -270,9 +305,13 @@ function boardControl() {
                     matrice[row][col] === matrice[row - 3][col + 3] &&
                     matrice[row][col] !== 0) {
                     if (matrice[row][col] === 1) {
+                        whoWon = 1;
+                        score[0]++;
                         EndGame();
                     }
                     else if (matrice[row][col] === 2) {
+                        whoWon = 2;
+                        score[1]++;
                         EndGame();
                     }
                 }
@@ -289,6 +328,7 @@ function boardControl() {
     }
     function EndGame(){
         gameEnd = true;
+        nextTurn();
     }
 }
 function clear() {
@@ -323,6 +363,7 @@ function init() { //Everything is initialised here.
     cWidth = canvas.width;
     cHeight = canvas.height;
 
+    whoWon = 'tie';
     startRow = 0; //used for calculating the rows. Don't touch.
 
     chipsPlaced = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0], //The board represented in a matrix. If player 1 places a chip 0 turns into a 1 if player 2 places a chip 0 turns into a 2.
@@ -333,9 +374,11 @@ function init() { //Everything is initialised here.
 
     chipsPositionY = [279, 223, 167, 111, 55];
     chipsPositionX = [0, 56, 112, 168, 224,280,336,392,448,504];
+
     gameStart = false; //Used for "Click to start game" msg at start of game.
     gameEnd = false; //Used for Game Over Screen
     player = new Player(); //Initialise the player.
+    score = [0,0];
 
     document.addEventListener('mousemove', function () { //Used to get mouse position and set "player" position at cursor.
         mouseX = event.clientX - canvas.offsetLeft;
@@ -347,18 +390,15 @@ function init() { //Everything is initialised here.
     document.addEventListener('mousedown', function () { //Starts game on click.
         if(!gameStart && !gameEnd){
             gameStart = true;
+            chipsPlaced = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0], //The board represented in a matrix. If player 1 places a chip 0 turns into a 1 if player 2 places a chip 0 turns into a 2.
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]];
         }else if(gameEnd && gameEnd){
-            setTimeout(function(){
-
-                gameStart = true;
-                gameEnd = false;
-
-                chipsPlaced = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0], //The board represented in a matrix. If player 1 places a chip 0 turns into a 1 if player 2 places a chip 0 turns into a 2.
-                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]];
-            }, 2000);
+            gameStart = false;
+            gameEnd = false;
+            whoWon = 'tie';
         }
     });
     document.addEventListener('mousedown', boardControl); //Calls boardControl function on mouse click.

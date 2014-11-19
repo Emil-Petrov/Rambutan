@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c75cbc50-1bb4-4eab-9e40-937b9ea7493a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Game/4-in-a-line/scripts/game.js" afterPath="$PROJECT_DIR$/Game/4-in-a-line/scripts/game.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Rambutan.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,16 +29,9 @@
       <file leaf-file-name="game.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Game/4-in-a-line/scripts/game.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.56731874" vertical-offset="0" max-vertical-offset="5508">
-              <caret line="56" column="54" selection-start-line="56" selection-start-column="54" selection-end-line="56" selection-end-column="54" />
-              <folding>
-                <element signature="n#!!block;n#draw#0" expanded="false" />
-                <element signature="e#510#540#0" expanded="false" />
-                <element signature="e#570#649#0" expanded="false" />
-                <element signature="n#!!block;n#drawPlayers#0;n#!!block;n#drawBoard#0" expanded="false" />
-                <element signature="n#!!block;n#clear#0" expanded="false" />
-                <element signature="n#!!block;n#Player#0" expanded="false" />
-              </folding>
+            <state vertical-scroll-proportion="-0.82163405" vertical-offset="714" max-vertical-offset="7055">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -48,8 +39,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Game/4-in-a-line/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="255">
-              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="255">
+              <caret line="25" column="7" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
               <folding>
                 <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
               </folding>
@@ -236,7 +227,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1050" extended-state="1" />
+    <frame x="-9" y="-9" width="1938" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -286,14 +277,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3570">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!block;n#draw#0" expanded="false" />
-            <element signature="e#510#540#0" expanded="false" />
-            <element signature="e#570#649#0" expanded="false" />
-            <element signature="n#!!block;n#drawPlayers#0;n#!!block;n#drawBoard#0" expanded="false" />
-            <element signature="n#!!block;n#clear#0" expanded="false" />
-            <element signature="n#!!block;n#Player#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -311,14 +295,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3570">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!block;n#draw#0" expanded="false" />
-            <element signature="e#510#540#0" expanded="false" />
-            <element signature="e#570#649#0" expanded="false" />
-            <element signature="n#!!block;n#drawPlayers#0;n#!!block;n#drawBoard#0" expanded="false" />
-            <element signature="n#!!block;n#clear#0" expanded="false" />
-            <element signature="n#!!block;n#Player#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -336,14 +313,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2822">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!block;n#draw#0" expanded="false" />
-            <element signature="e#510#540#0" expanded="false" />
-            <element signature="e#570#649#0" expanded="false" />
-            <element signature="n#!!block;n#drawPlayers#0;n#!!block;n#drawBoard#0" expanded="false" />
-            <element signature="n#!!block;n#clear#0" expanded="false" />
-            <element signature="n#!!block;n#Player#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -361,14 +331,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3400">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!block;n#draw#0" expanded="false" />
-            <element signature="e#510#540#0" expanded="false" />
-            <element signature="e#570#649#0" expanded="false" />
-            <element signature="n#!!block;n#drawPlayers#0;n#!!block;n#drawBoard#0" expanded="false" />
-            <element signature="n#!!block;n#clear#0" expanded="false" />
-            <element signature="n#!!block;n#Player#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -386,14 +349,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3434">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!block;n#draw#0" expanded="false" />
-            <element signature="e#510#540#0" expanded="false" />
-            <element signature="e#570#649#0" expanded="false" />
-            <element signature="n#!!block;n#drawPlayers#0;n#!!block;n#drawBoard#0" expanded="false" />
-            <element signature="n#!!block;n#clear#0" expanded="false" />
-            <element signature="n#!!block;n#Player#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -411,14 +367,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3315">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!block;n#draw#0" expanded="false" />
-            <element signature="e#510#540#0" expanded="false" />
-            <element signature="e#570#649#0" expanded="false" />
-            <element signature="n#!!block;n#drawPlayers#0;n#!!block;n#drawBoard#0" expanded="false" />
-            <element signature="n#!!block;n#clear#0" expanded="false" />
-            <element signature="n#!!block;n#Player#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -436,14 +385,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!block;n#draw#0" expanded="false" />
-            <element signature="e#510#540#0" expanded="false" />
-            <element signature="e#570#649#0" expanded="false" />
-            <element signature="n#!!block;n#drawPlayers#0;n#!!block;n#drawBoard#0" expanded="false" />
-            <element signature="n#!!block;n#clear#0" expanded="false" />
-            <element signature="n#!!block;n#Player#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -461,14 +403,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!block;n#draw#0" expanded="false" />
-            <element signature="e#510#540#0" expanded="false" />
-            <element signature="e#570#649#0" expanded="false" />
-            <element signature="n#!!block;n#drawPlayers#0;n#!!block;n#drawBoard#0" expanded="false" />
-            <element signature="n#!!block;n#clear#0" expanded="false" />
-            <element signature="n#!!block;n#Player#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -491,8 +426,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Game/4-in-a-line/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="255">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="255">
+          <caret line="25" column="7" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
           <folding>
             <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
           </folding>
@@ -501,16 +436,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Game/4-in-a-line/scripts/game.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.56731874" vertical-offset="0" max-vertical-offset="5508">
-          <caret line="56" column="54" selection-start-line="56" selection-start-column="54" selection-end-line="56" selection-end-column="54" />
-          <folding>
-            <element signature="n#!!block;n#draw#0" expanded="false" />
-            <element signature="e#510#540#0" expanded="false" />
-            <element signature="e#570#649#0" expanded="false" />
-            <element signature="n#!!block;n#drawPlayers#0;n#!!block;n#drawBoard#0" expanded="false" />
-            <element signature="n#!!block;n#clear#0" expanded="false" />
-            <element signature="n#!!block;n#Player#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="-0.82163405" vertical-offset="714" max-vertical-offset="7055">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
