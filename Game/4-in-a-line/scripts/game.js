@@ -6,8 +6,8 @@ var canvas,
     player,
     turn,
     chipsPlaced,
-    chipsPositiony,
-    chipsPositionx,
+    chipsPositionY,
+    chipsPositionX,
     startRow,
     mouseX,
     mouseY;
@@ -29,19 +29,17 @@ function drawBoard() {
     drawFoot();
     if (gameStart) {
         drawPlayers();
-        
     }
     function drawPlayers() {
-        var row="";
         for (var row = 0; row < 5; row++) {
             for (var col = 0; col < 10; col++) {
                 if (chipsPlaced[row][col]==1) {
                     ctx.fillStyle = player.p1color;
-                    ctx.fillRect(chipsPositionx[col]+5, chipsPositiony[row]+5, 40, 40);
+                    ctx.fillRect(chipsPositionX[col]+5, chipsPositionY[row]+5, 40, 40);
                 }
                 if (chipsPlaced[row][col] == 2) {
                     ctx.fillStyle = player.p2color;
-                    ctx.fillRect(chipsPositionx[col]+5, chipsPositiony[row]+5, 40, 40);
+                    ctx.fillRect(chipsPositionX[col]+5, chipsPositionY[row]+5, 40, 40);
                 }
             }
         }
@@ -89,9 +87,9 @@ function drawBoard() {
         for (var row = 0; row < 5; row++) {
             for (var col = 0; col < 10; col++) {
                 ctx.fillStyle = "#FFD700";
-                ctx.fillRect(chipsPositionx[col], chipsPositiony[row], 50, 50);
+                ctx.fillRect(chipsPositionX[col], chipsPositionY[row], 50, 50);
                 ctx.fillStyle = "#659CEF";
-                ctx.fillRect(chipsPositionx[col]+5, chipsPositiony[row]+5, 40, 40);
+                ctx.fillRect(chipsPositionX[col]+5, chipsPositionY[row]+5, 40, 40);
                 ctx.strokeRect(56 * col, 55 + 56 * row, 50, 50);
             }
         }
@@ -108,15 +106,18 @@ function drawBoard() {
         }
         else {
             if (turn == 1) { //Somehow takes into account player color and uses it.
+                ctx.fillStyle = player.p1color;
                 ctx.font = '40px Arial bold'
                 //ctx.textAlign = 'start';
                 ctx.fillText('It`s Player 1`s turn', 0, 370, cWidth);
             }
             else if (turn == 2) { //Somehow takes into account player color and uses it.
+                ctx.fillStyle = player.p2color;
                 ctx.font = '40px Arial bold'
                 //ctx.textAlign = 'start';
                 ctx.fillText('It`s Player 2`s turn', 0, 370, cWidth);
             } else {
+                ctx.fillStyle = 'black';
                 ctx.font = '40px Arial bold'
                 //ctx.textAlign = 'start';
                 ctx.fillText('Click inside the game to start.', 0, 370, cWidth);
@@ -166,7 +167,7 @@ function drop() {
                     chipsPlaced[startRow][col - 1] = turn;
                     startRow = 0;
                 }
-                else { //If it's player 2's turn it places a 2 in matrix.
+                else if (turn==2) { //If it's player 2's turn it places a 2 in matrix.
                     chipsPlaced[startRow][col - 1] = turn;
                     startRow = 0;
                 }
@@ -198,7 +199,6 @@ function Player() { //New player thingy.
         if (turn == 1) { //player 1 turn;
             ctx.fillStyle = this.p1color; //player 1 color
             ctx.fillRect(this.x - this.width / 2, this.y - this.height / 2, this.width, this.height);
-
         }
         else if (turn == 2) { //player 2 turn;
             ctx.fillStyle = this.p2color; //player 1 color
@@ -221,8 +221,8 @@ function init() { //Everything is initialised here.
                     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]];
 
-    chipsPositiony = [279, 223, 167, 111, 55];
-    chipsPositionx = [0, 56, 112, 168, 224,280,336,392,448,504];
+    chipsPositionY = [279, 223, 167, 111, 55];
+    chipsPositionX = [0, 56, 112, 168, 224,280,336,392,448,504];
     gameStart = false; //Used for "Click to start game" msg at start of game.
 
     player = new Player(); //Initialise the player.
