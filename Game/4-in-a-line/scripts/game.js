@@ -99,7 +99,7 @@ function drawBoard() {
 
         if (!gameStart) {
             ctx.fillStyle = 'black';
-            ctx.font = '40px Arial bold'
+            ctx.font = '40px Arial bold';
             //ctx.textAlign = 'start'; //Aligns text at the bottom looks ugly as fk -.-
             //ctx.textBaseline = 'middle';
             ctx.fillText('Click to start', 0, 370, cWidth);
@@ -180,7 +180,7 @@ function drop() {
                 turn = 1;
             }
         }
-
+        winCheck()
     }
 
 }
@@ -212,10 +212,9 @@ function init() { //Everything is initialised here.
     cWidth = canvas.width;
     cHeight = canvas.height;
 
-
     startRow = 0; //used for calculating the rows. Don't touch.
 
-    chipsPlaced = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0], //The board represented in a matrix. If player 1 places a chip 0 turns into a 1 if player 2 places a chip 0 turns into a 2.
+    chipsPlaced =  [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0], //The board represented in a matrix. If player 1 places a chip 0 turns into a 1 if player 2 places a chip 0 turns into a 2.
                     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -276,4 +275,58 @@ window.addEventListener('load', init); //Starts everything
 //        }
 //        return !!(colWin || rowWin || drWin || dlWin)
 //    }
+//}
+
+
+//function winCheck() { //Checks if a player wins the game (there is 4 chips of 1 color in a row)
+//    for (var i = 0; i < 5; i++) {
+//        for (var j = 0; j < 10; j++) {
+//            check(i, j)
+//        }
+//    }
+//}
+//function check(row, col) {
+//    //Check for horizontal win
+//    if (col < 7) {
+//        if (chipsPlaced[row][col] === chipsPlaced[row][col + 1] === chipsPlaced[row][col + 2] === chipsPlaced[row][col + 3] && chipsPlaced[row][col] !== 0) {
+//            if (chipsPlaced[row][col] === 1) {
+//
+//            }
+//            else if (chipsPlaced[row][col] === 2) {
+//
+//            }
+//        }
+//    }
+//    //Check for vertical win
+//    if (row < 2) {
+//       if (chipsPlaced[row][col] === chipsPlaced[row + 1][col] === chipsPlaced[row + 2][col] === chipsPlaced[row + 3][col] && chipsPlaced[row][col] !== 0) {
+//            if (chipsPlaced[row][col] === 1) {
+//
+//            }
+//            else if (chipsPlaced[row][col] === 2) {
+//
+//            }
+//        }
+//    }
+//    //Check for diagonal win
+//    if (row < 2 && col < 7) {
+//        if (chipsPlaced[row][col] === chipsPlaced[row + 1][col + 1] === chipsPlaced[row + 2][col + 2] === chipsPlaced[row + 3][col + 3] && chipsPlaced[row][col] !== 0) {
+//            if (chipsPlaced[row][j] === 1) {
+//
+//            }
+//            else if (chipsPlaced[row][j] === 2) {
+//
+//            }
+//        }
+//    }
+//    else if (row > 2 && col < 7) {
+//        if (chipsPlaced[row][col] === chipsPlaced[row - 1][col + 1] === chipsPlaced[row - 2][col + 2] === chipsPlaced[row - 3][col + 3] && chipsPlaced[row][col] !== 0) {
+//            if (chipsPlaced[row][col] === 1) {
+//
+//            }
+//            else if (chipsPlaced[row][col] === 2) {
+//
+//            }
+//        }
+//   }
 //}
