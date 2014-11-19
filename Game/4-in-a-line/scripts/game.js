@@ -56,7 +56,8 @@ function drawBoard() {
 
     function drawHead() { //The top part of the board.
         ctx.strokeRect(0, 0, cWidth, 50);
-
+        ctx.fillStyle = 'rgba(255,255,255,0.8)';
+        ctx.fillRect(1,1, cWidth-2, 48);
             markSpot(); //Marks where player will take turn.
 
         function markSpot() { //Marks where player will take his turn..
@@ -156,7 +157,6 @@ function drawBoard() {
     }
 }
 function boardControl() {
-
     //If you click between x and x and you drop a chip at N col at the lowest free row.
     if (player.x >= 0 && player.x <= 52) { //1
         placeChip(1);
@@ -323,7 +323,6 @@ function init() { //Everything is initialised here.
     cWidth = canvas.width;
     cHeight = canvas.height;
 
-
     startRow = 0; //used for calculating the rows. Don't touch.
 
     chipsPlaced = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0], //The board represented in a matrix. If player 1 places a chip 0 turns into a 1 if player 2 places a chip 0 turns into a 2.
@@ -349,14 +348,17 @@ function init() { //Everything is initialised here.
         if(!gameStart && !gameEnd){
             gameStart = true;
         }else if(gameEnd && gameEnd){
-            gameStart = false;
-            gameEnd = false;
+            setTimeout(function(){
 
-            chipsPlaced = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0], //The board represented in a matrix. If player 1 places a chip 0 turns into a 1 if player 2 places a chip 0 turns into a 2.
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]];
+                gameStart = true;
+                gameEnd = false;
+
+                chipsPlaced = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0], //The board represented in a matrix. If player 1 places a chip 0 turns into a 1 if player 2 places a chip 0 turns into a 2.
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]];
+            }, 2000);
         }
     });
     document.addEventListener('mousedown', boardControl); //Calls boardControl function on mouse click.

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c75cbc50-1bb4-4eab-9e40-937b9ea7493a" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Game/4-in-a-line/scripts/game.js" afterPath="$PROJECT_DIR$/Game/4-in-a-line/scripts/game.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -30,16 +31,15 @@
       <file leaf-file-name="game.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Game/4-in-a-line/scripts/game.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3716916" vertical-offset="0" max-vertical-offset="1054">
-              <caret line="220" column="0" selection-start-line="220" selection-start-column="0" selection-end-line="220" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.56731874" vertical-offset="0" max-vertical-offset="5508">
+              <caret line="56" column="54" selection-start-line="56" selection-start-column="54" selection-end-line="56" selection-end-column="54" />
               <folding>
                 <element signature="n#!!block;n#draw#0" expanded="false" />
-                <element signature="n#!!block;n#drawBoard#0" expanded="false" />
-                <element signature="n#!!block;n#drop#0" expanded="false" />
+                <element signature="e#510#540#0" expanded="false" />
+                <element signature="e#570#649#0" expanded="false" />
+                <element signature="n#!!block;n#drawPlayers#0;n#!!block;n#drawBoard#0" expanded="false" />
                 <element signature="n#!!block;n#clear#0" expanded="false" />
                 <element signature="n#!!block;n#Player#0" expanded="false" />
-                <element signature="n#!!block;n#init#0" expanded="false" />
-                <element signature="e#7598#7655#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -48,8 +48,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Game/4-in-a-line/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="255">
-              <caret line="23" column="7" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
+            <state vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="255">
+              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding>
                 <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
               </folding>
@@ -106,6 +106,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -144,7 +145,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -163,14 +163,10 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
-      <method />
-    </configuration>
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <method />
     </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
-      <envs />
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <method />
     </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
@@ -178,6 +174,10 @@
       <setting name="settingsFile" value="" />
       <setting name="serverType" value="INTERNAL" />
       <setting name="preferredDebugBrowser" value="Chrome" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
@@ -252,11 +252,11 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -284,16 +284,90 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Game/4-in-a-line/scripts/game.js">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3570">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!block;n#draw#0" expanded="false" />
+            <element signature="e#510#540#0" expanded="false" />
+            <element signature="e#570#649#0" expanded="false" />
+            <element signature="n#!!block;n#drawPlayers#0;n#!!block;n#drawBoard#0" expanded="false" />
+            <element signature="n#!!block;n#clear#0" expanded="false" />
+            <element signature="n#!!block;n#Player#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Game/4-in-a-line/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="255">
+          <caret line="25" column="7" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
+          <folding>
+            <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Game/4-in-a-line/scripts/game.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3570">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!block;n#draw#0" expanded="false" />
+            <element signature="e#510#540#0" expanded="false" />
+            <element signature="e#570#649#0" expanded="false" />
+            <element signature="n#!!block;n#drawPlayers#0;n#!!block;n#drawBoard#0" expanded="false" />
+            <element signature="n#!!block;n#clear#0" expanded="false" />
+            <element signature="n#!!block;n#Player#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Game/4-in-a-line/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="255">
+          <caret line="25" column="7" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
+          <folding>
+            <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Game/4-in-a-line/scripts/game.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2822">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!block;n#draw#0" expanded="false" />
+            <element signature="e#510#540#0" expanded="false" />
+            <element signature="e#570#649#0" expanded="false" />
+            <element signature="n#!!block;n#drawPlayers#0;n#!!block;n#drawBoard#0" expanded="false" />
+            <element signature="n#!!block;n#clear#0" expanded="false" />
+            <element signature="n#!!block;n#Player#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Game/4-in-a-line/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="255">
+          <caret line="23" column="7" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
+          <folding>
+            <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Game/4-in-a-line/scripts/game.js">
+      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3400">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#!!block;n#draw#0" expanded="false" />
-            <element signature="n#!!block;n#drawBoard#0" expanded="false" />
-            <element signature="n#!!block;n#drop#0" expanded="false" />
+            <element signature="e#510#540#0" expanded="false" />
+            <element signature="e#570#649#0" expanded="false" />
+            <element signature="n#!!block;n#drawPlayers#0;n#!!block;n#drawBoard#0" expanded="false" />
             <element signature="n#!!block;n#clear#0" expanded="false" />
             <element signature="n#!!block;n#Player#0" expanded="false" />
-            <element signature="n#!!block;n#init#0" expanded="false" />
-            <element signature="e#7598#7655#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -314,12 +388,11 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#!!block;n#draw#0" expanded="false" />
-            <element signature="n#!!block;n#drawBoard#0" expanded="false" />
-            <element signature="n#!!block;n#drop#0" expanded="false" />
+            <element signature="e#510#540#0" expanded="false" />
+            <element signature="e#570#649#0" expanded="false" />
+            <element signature="n#!!block;n#drawPlayers#0;n#!!block;n#drawBoard#0" expanded="false" />
             <element signature="n#!!block;n#clear#0" expanded="false" />
             <element signature="n#!!block;n#Player#0" expanded="false" />
-            <element signature="n#!!block;n#init#0" expanded="false" />
-            <element signature="e#7598#7655#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -340,12 +413,11 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#!!block;n#draw#0" expanded="false" />
-            <element signature="n#!!block;n#drawBoard#0" expanded="false" />
-            <element signature="n#!!block;n#drop#0" expanded="false" />
+            <element signature="e#510#540#0" expanded="false" />
+            <element signature="e#570#649#0" expanded="false" />
+            <element signature="n#!!block;n#drawPlayers#0;n#!!block;n#drawBoard#0" expanded="false" />
             <element signature="n#!!block;n#clear#0" expanded="false" />
             <element signature="n#!!block;n#Player#0" expanded="false" />
-            <element signature="n#!!block;n#init#0" expanded="false" />
-            <element signature="e#7598#7655#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -366,12 +438,11 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#!!block;n#draw#0" expanded="false" />
-            <element signature="n#!!block;n#drawBoard#0" expanded="false" />
-            <element signature="n#!!block;n#drop#0" expanded="false" />
+            <element signature="e#510#540#0" expanded="false" />
+            <element signature="e#570#649#0" expanded="false" />
+            <element signature="n#!!block;n#drawPlayers#0;n#!!block;n#drawBoard#0" expanded="false" />
             <element signature="n#!!block;n#clear#0" expanded="false" />
             <element signature="n#!!block;n#Player#0" expanded="false" />
-            <element signature="n#!!block;n#init#0" expanded="false" />
-            <element signature="e#7598#7655#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -392,12 +463,11 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#!!block;n#draw#0" expanded="false" />
-            <element signature="n#!!block;n#drawBoard#0" expanded="false" />
-            <element signature="n#!!block;n#drop#0" expanded="false" />
+            <element signature="e#510#540#0" expanded="false" />
+            <element signature="e#570#649#0" expanded="false" />
+            <element signature="n#!!block;n#drawPlayers#0;n#!!block;n#drawBoard#0" expanded="false" />
             <element signature="n#!!block;n#clear#0" expanded="false" />
             <element signature="n#!!block;n#Player#0" expanded="false" />
-            <element signature="n#!!block;n#init#0" expanded="false" />
-            <element signature="e#7598#7655#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -421,8 +491,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Game/4-in-a-line/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="255">
-          <caret line="23" column="7" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
+        <state vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="255">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
             <element signature="n#head#0;n#html#0;n#!!top" expanded="false" />
           </folding>
@@ -431,16 +501,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Game/4-in-a-line/scripts/game.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3716916" vertical-offset="0" max-vertical-offset="1054">
-          <caret line="220" column="0" selection-start-line="220" selection-start-column="0" selection-end-line="220" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.56731874" vertical-offset="0" max-vertical-offset="5508">
+          <caret line="56" column="54" selection-start-line="56" selection-start-column="54" selection-end-line="56" selection-end-column="54" />
           <folding>
             <element signature="n#!!block;n#draw#0" expanded="false" />
-            <element signature="n#!!block;n#drawBoard#0" expanded="false" />
-            <element signature="n#!!block;n#drop#0" expanded="false" />
+            <element signature="e#510#540#0" expanded="false" />
+            <element signature="e#570#649#0" expanded="false" />
+            <element signature="n#!!block;n#drawPlayers#0;n#!!block;n#drawBoard#0" expanded="false" />
             <element signature="n#!!block;n#clear#0" expanded="false" />
             <element signature="n#!!block;n#Player#0" expanded="false" />
-            <element signature="n#!!block;n#init#0" expanded="false" />
-            <element signature="e#7598#7655#0" expanded="false" />
           </folding>
         </state>
       </provider>
