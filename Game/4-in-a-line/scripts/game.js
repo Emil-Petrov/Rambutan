@@ -37,7 +37,7 @@ function drawBoard() {
                     ctx.fillStyle = player.p1color;
                     ctx.fillRect(chipsPositionX[col]+5, chipsPositionY[row]+5, 40, 40);
                 }
-                if (chipsPlaced[row][col] == 2) {
+                else if (chipsPlaced[row][col] == 2) {
                     ctx.fillStyle = player.p2color;
                     ctx.fillRect(chipsPositionX[col]+5, chipsPositionY[row]+5, 40, 40);
                 }
@@ -47,7 +47,8 @@ function drawBoard() {
 
     function drawHead() { //The top part of the board.
         ctx.strokeRect(0, 0, cWidth, 50);
-        markSpot(); //Marks where player will take turn.
+
+            markSpot(); //Marks where player will take turn.
 
         function markSpot() { //Marks where player will take his turn..
             if (player.x >= 0 && player.x <= 52) { //1
@@ -72,13 +73,15 @@ function drawBoard() {
                 placeMark(503);
             }
             function placeMark(a) { //Fills the above marked spot based on player.
-                ctx.strokeRect(a + 1, 1, 50, 49);
-                if (turn == 1) { //Draws a square.
-                    ctx.fillStyle = player.p1color;
-                    ctx.fillRect(a + 6, 5, 40, 40);
-                } else if (turn == 2) { //Draws a circle.
-                    ctx.fillStyle = player.p2color;
-                    ctx.fillRect(a + 6, 5, 40, 40);
+                ctx.strokeRect(a + 1, 1, 50, 48);
+                if (player.y <= 55) {
+                    if (turn == 1) { //Draws a square.
+                        ctx.fillStyle = player.p1color;
+                        ctx.fillRect(a + 6, 5, 40, 40);
+                    } else if (turn == 2) { //Draws a circle.
+                        ctx.fillStyle = player.p2color;
+                        ctx.fillRect(a + 6, 5, 40, 40);
+                    }
                 }
             }
         }
@@ -86,41 +89,53 @@ function drawBoard() {
     function mainBoard() { //Draws grid in the middle of the screen. If you want you can delete it and draw whatever you want...
         for (var row = 0; row < 5; row++) {
             for (var col = 0; col < 10; col++) {
-                ctx.fillStyle = "#FFD700";
+                ctx.fillStyle = "rgba(255,255,255,0.5)";
                 ctx.fillRect(chipsPositionX[col], chipsPositionY[row], 50, 50);
-                ctx.fillStyle = "#659CEF";
+                ctx.fillStyle = "rgba(255,255,255,0.7)";
                 ctx.fillRect(chipsPositionX[col]+5, chipsPositionY[row]+5, 40, 40);
                 ctx.strokeRect(56 * col, 55 + 56 * row, 50, 50);
             }
         }
     }
     function drawFoot() { //Used for info display.
-        ctx.strokeRect(0, 335, cWidth, 50);
 
+
+        ctx.strokeRect(0, 335, cWidth, 50);
+        var background = document.getElementsByTagName('body');
+        ctx.fillRect(2,337, cWidth-4, 46);
         if (!gameStart) {
             ctx.fillStyle = 'black';
-            ctx.font = '40px Arial bold'
+            ctx.font = "40px 'PT Sans',Tahoma,sans-serif";
             //ctx.textAlign = 'start'; //Aligns text at the bottom looks ugly as fk -.-
             //ctx.textBaseline = 'middle';
-            ctx.fillText('Click to start', 0, 370, cWidth);
+            ctx.fillText('Click to start', 167, 375, cWidth);
         }
         else {
             if (turn == 1) { //Somehow takes into account player color and uses it.
+                ctx.fillStyle = '#000000';
+                ctx.font = "40px 'PT Sans',Tahoma,sans-serif bold";
+                ctx.fillText('It`s Player 1`s turn', 110, 375, cWidth);
                 ctx.fillStyle = player.p1color;
-                ctx.font = '40px Arial bold'
-                //ctx.textAlign = 'start';
-                ctx.fillText('It`s Player 1`s turn', 0, 370, cWidth);
+                ctx.fillRect(60,340,40,40);
+                ctx.fillRect(470,340,40,40);
+                ctx.strokeStyle = '#000000';
+                ctx.strokeRect(59,339,42,42);
+                ctx.strokeRect(469,339,42,42);
             }
             else if (turn == 2) { //Somehow takes into account player color and uses it.
+                ctx.fillStyle = '#000000';
+                ctx.font = "40px 'PT Sans',Tahoma,sans-serif";
+                ctx.fillText('It`s Player 2`s turn', 110, 375, cWidth);
                 ctx.fillStyle = player.p2color;
-                ctx.font = '40px Arial bold'
-                //ctx.textAlign = 'start';
-                ctx.fillText('It`s Player 2`s turn', 0, 370, cWidth);
+                ctx.fillRect(60,340,40,40);
+                ctx.fillRect(470,340,40,40);
+                ctx.strokeStyle = '#000000';
+                ctx.strokeRect(59,339,42,42);
+                ctx.strokeRect(469,339,42,42);
             } else {
                 ctx.fillStyle = 'black';
-                ctx.font = '40px Arial bold'
-                //ctx.textAlign = 'start';
-                ctx.fillText('Click inside the game to start.', 0, 370, cWidth);
+                ctx.font = "40px 'PT Sans',Tahoma,sans-serif";
+                ctx.fillText('Click inside the game to start.', 5, 375, cWidth);
             }
         }
     }
@@ -194,15 +209,19 @@ function Player() { //New player thingy.
     this.width = 40;
     this.height = 40;
     this.p1color = '#000eff'; //Blue
-    this.p2color = '#FF0000'; //Red
+    this.p2color = '#ffe000'; //Yerrow
+
+
     this.draw = function () { //Draws circle/square at mouse cursor.
-        if (turn == 1) { //player 1 turn;
-            ctx.fillStyle = this.p1color; //player 1 color
-            ctx.fillRect(this.x - this.width / 2, this.y - this.height / 2, this.width, this.height);
-        }
-        else if (turn == 2) { //player 2 turn;
-            ctx.fillStyle = this.p2color; //player 1 color
-            ctx.fillRect(this.x - this.width / 2, this.y - this.height / 2, this.width, this.height);
+        if (this.y > 55){
+            if (turn == 1) { //player 1 turn;
+                ctx.fillStyle = this.p1color; //player 1 color
+                ctx.fillRect(this.x - this.width / 2, this.y - this.height / 2, this.width, this.height);
+            }
+            else if (turn == 2) { //player 2 turn;
+                ctx.fillStyle = this.p2color; //player 1 color
+                ctx.fillRect(this.x - this.width / 2, this.y - this.height / 2, this.width, this.height);
+            }
         }
     }
 }
