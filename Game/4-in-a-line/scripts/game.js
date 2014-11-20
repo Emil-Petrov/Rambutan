@@ -316,6 +316,14 @@ function boardControl() {
                     }
                 }
             }
+			if (row == 4){
+				for(var tieCheck = 0; tieCheck < 10; tieCheck++){
+					if (matrice[4][tieCheck]==0){
+						return;
+					}
+				}
+				EndGame();
+			}
         }
     }
     function nextTurn(){//Swaps turns.
