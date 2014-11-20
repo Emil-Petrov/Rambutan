@@ -365,6 +365,11 @@ function Player() { //New player thingy.
         }
     }
 }
+function hideMouse(){
+    document.getElementById('canvas').onmouseover = function(){
+        this.style.cursor = 'none';
+    }
+}
 function init() { //Everything is initialised here.
     canvas = document.getElementById('canvas');
     ctx = canvas.getContext('2d');
